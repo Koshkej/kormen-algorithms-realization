@@ -6,7 +6,7 @@ std::map<std::string, int> findMaximumCrossingSubarray(const std::vector<int>& a
     std::map<std::string, int> result = { {"begin", 0},{"end", 0},{"sum", 0} };
 
     int leftSum = INT_MIN;
-    for (int i = indexMiddle, incrementedSum = 0; i >= indexBegin; i--) {
+    for (int i = indexMiddle, incrementedSum = 0; i >= indexBegin; --i) {
         incrementedSum += arrayin[i];
         bool isArrayIncrementBigger = leftSum < incrementedSum;
         if (isArrayIncrementBigger) {
@@ -16,7 +16,7 @@ std::map<std::string, int> findMaximumCrossingSubarray(const std::vector<int>& a
     }
 
     int rightSum = INT_MIN;
-    for (int j = indexMiddle + 1, incrementedSum = 0; j <= indexEnd; j++) {
+    for (int j = indexMiddle + 1, incrementedSum = 0; j <= indexEnd; ++j) {
         incrementedSum += arrayin[j];
         bool isArrayIncrementBigger = rightSum < incrementedSum;
         if (isArrayIncrementBigger) {
