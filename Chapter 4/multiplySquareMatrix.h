@@ -14,6 +14,7 @@ Matrix multiplySquareMatrix(Matrix A, Matrix B) {
 
 }
 
+// below is a very simple class of matrices to demonstrate
 class Matrix {
 public:
 
